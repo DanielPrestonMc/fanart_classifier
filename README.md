@@ -5,7 +5,9 @@
 
 ## Background
 
-N/A
+https://lehd.ces.census.gov/data/pseo_experimental.html
+
+
 
 ---
 
@@ -35,7 +37,7 @@ Based on 2016 data from the US Census of average earnings of institution graduat
 **Data dictionary**
 ---
 
-https://api.census.gov/data/timeseries/pseo/earnings/variables.html
+https://lehd.ces.census.gov/data/schema/V4.7.0/lehd_public_use_schema.html
 
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
