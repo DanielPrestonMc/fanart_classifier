@@ -3,13 +3,7 @@
 
 ---
 
-## Background
-
-N/A
-
----
-
-## Problem Statement
+## Background & Problem Statement
 
 N/A
 
@@ -28,23 +22,35 @@ N/A
 
 ## The Data
 
-[clean_data.csv](data/clean_data.csv) - This dataset contains N/A.
+[Luffy Image Data](assets/luffy/) - This folder contains image data for the character 'Luffy'.
+<br>
+[Zoro Image Data](assets/zoro/) - This folder contains image data for the character 'Zoro'.
+<br>
+[Nami Image Data](assets/nami/) - This folder contains image data for the character 'Nami'.
+<br>
+[Sanji Image Data](assets/sanji/) - This folder contains image data for the character 'Sanji'.
+<br>
+[Chopper Image Data](assets/chopper/) - This folder contains image data for the character 'Chopper'.
+<br>
+[Robin Image Data](assets/robin/) - This folder contains image data for the character 'Robin'.
+<br>
+[Franky Image Data](assets/franky/) - This folder contains image data for the character 'Franky'.
+<br>
+[Brook Image Data](assets/brook/) - This folder contains image data for the character 'Brook'.
 <br><br>
-
-
-**Data dictionary**
----
-
-|Feature|Type|Dataset|Description|
-|---|---|---|---|
-| N/A | *integer* | N/A | N/A
-
 
 ---
 
 ## Jupyter Lab Notebook Files
 
-[Notebook File](code/data_gathering_2.ipynb)
+[Python File for Scraper Function](code/scraping/scraper.py)
+<br>
+[Python File for Scraping Character Image Data](code/scraping/scraping_characters.py)
+<br>
+[Python File for CNN Model](code/cnn_model.py)
+<br>
+[Python File for Flask App Deployment](flask_app/cap_app.py)
+<br>
 
 ---
 
@@ -56,13 +62,13 @@ N/A
 
 ## Modeling
 
-N/A
+Convolutional Neural Network
 
 ---
 
 ## Application
 
-N/A
+Flask/Heroku App
 
 ---
 

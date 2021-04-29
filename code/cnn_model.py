@@ -1,3 +1,5 @@
+# CNN Model trained on image data to predict new image data classification
+
 import numpy as np
 import pandas as pd
 import pickle
@@ -11,57 +13,88 @@ from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2
 # Reference: https://keras.io/api/preprocessing/image/
 # Reference: https://www.tensorflow.org/guide/data
 
+
+
+# Using tensorflow.keras.preprocessing.image_dataset_from_directory to read in image data.  Images are classified by the directory folders they are in automatically.  Original image size is retained.  95 images, 8 classes.
 image_data = image_dataset_from_directory('../assets',
                                         labels='inferred',
                                         label_mode='categorical',
                                         image_size=(255, 350),
+                                        batch_size=95,
                                         shuffle=False)
 
+# using for loop to separate image data from class data.  numpy.copy converts data to arrays.
 for img in image_data:
-    X = np.asarray(img[0])
-    y = np.asarray(img[1])
+    X = np.copy(img[0])
+    y = np.copy(img[1])
 
-X_train, X_test, y_train, y_test = train_test_split(X, y)
+# transforming image data from values between 0 and 255 to values between 0 and 1.
+X /= 255
 
+# splitting data into training and testing data
+X_train, X_test, y_train, y_test = train_test_split(X,
+                                                    y,
+                                                    random_state=42,
+                                                    test_size=0.25,
+                                                    stratify=y)
+
+# instantiating model
 cnn_model = Sequential()
 
-cnn_model.add(Conv2D(filters=16,
+# add filters to image data through Conv2D and pool filtered image data with MaxPooling2D to reduce complexity.
+cnn_model.add(Conv2D(filters=64,
                      kernel_size=(3,3),
                      activation='relu',
                      input_shape=(255, 350, 3)
                 ))
-cnn_model.add(MaxPooling2D())
+cnn_model.add(MaxPooling2D(pool_size=(2,2)))
+cnn_model.add(Conv2D(filters=128,
+                     kernel_size=(3,3),
+                     activation='relu'
+                ))
+cnn_model.add(MaxPooling2D(pool_size=(2,2)))
 cnn_model.add(Conv2D(filters=32,
                      kernel_size=(3,3),
                      activation='relu'
                 ))
-cnn_model.add(MaxPooling2D())
+cnn_model.add(MaxPooling2D(pool_size=(2,2)))
+
+# flatten image data for input into neural network
 cnn_model.add(Flatten())
+
+# add dense layers and dropout layers to neural network
+cnn_model.add(Dense(64,
+                    activation='relu'
+                    ))
+cnn_model.add(Dropout(0.3))
 cnn_model.add(Dense(32,
                     activation='relu'
                     ))
-cnn_model.add(Dropout(0.5))
-cnn_model.add(Dense(16,
-                    activation='relu'
-                    ))
-cnn_model.add(Dropout(0.5))
-cnn_model.add(Dense(2,
+cnn_model.add(Dense(8,
                     activation='softmax'
                     ))
+
+# compile using categorical crossentropy and accuracy as metric
 cnn_model.compile(loss='categorical_crossentropy',
                   optimizer='adam',
                   metrics=['accuracy']
                   )
 
+# print summary of network parameters
+cnn_model.summary()
+
+# training the model on training data.  validating model with testing data.
 history = cnn_model.fit(X_train,
                       y_train,
-                      batch_size=128,
+                      batch_size=256,
                       validation_data=(X_test, y_test),
-                      epochs=10,
+                      epochs=20,
                       verbose=2)
 
+# saving model to file for use in flask application
 cnn_model.save('../cap_model')
 
+# loading model back in to confirm work save file
 cap_model = load_model('../cap_model')
 
 cap_model.summary()
