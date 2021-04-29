@@ -8,7 +8,7 @@ app = Flask('my_app')
 
 @app.route('/')
 def home():
-    return 'Home Page'
+    return '"One Piece" Fanart Classification Project'
 
 @app.route('/form')
 def form():
@@ -16,17 +16,9 @@ def form():
 
 @app.route('/result')
 def result():
-    data = request.args
-    X_test = np.array([
-    int(data['OverallQual']),
-    int(data['FullBath']),
-    int(data['GarageArea']),
-    int(data['LotArea'])
-    ]).reshape(1, -1)
     model = pickle.load(open('../cap_model/saved_model.pb', 'rb'))
-    pred = f'{round(model.predict(X_test)[0], 2):,}'
 
-    return render_template('results.html', prediction=pred)
+    return render_template('results.html')
 
 
 if __name__ == '__main__':

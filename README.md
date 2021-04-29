@@ -1,5 +1,18 @@
-# Capstone Project
+# 'One Piece' Fanart Classification Project
 ### *by Daniel Preston McBride*
+
+---
+
+## Contents:
+
+- [Background/Problem Statement](#Background-&-Problem-Statement)
+- [The Data](#The-Data)
+- [Jupyter Lab Notebook Files](#Jupyter-Lab-Notebook-Files)
+- [Image Scraping & Transformation](#Image-Scraping-&-Transformation)
+- [Modeling](#Modeling)
+- [Results](#Results)
+- [Application](#Application)
+- [Conclusion](#Conclusion)
 
 ---
 
@@ -9,18 +22,8 @@ N/A
 
 ---
 
-## Contents:
-
-- [The Data](#The-Data)
-- [Jupyter Lab Notebook Files](#Jupyter-Lab-Notebook-Files)
-- [Exploratory Data Analysis](#Exploratory-Data-Analysis)
-- [Modeling](#Modeling)
-- [Application](#Application)
-- [Conclusion](#Conclusion)
-
----
-
 ## The Data
+Image data scraped from https://myanimelist.net/
 
 [Luffy Image Data](assets/luffy/) - This folder contains image data for the character 'Luffy'.
 <br>
@@ -54,7 +57,7 @@ N/A
 
 ---
 
-## Exploratory Data Analysis
+## Image Scraping & Transformation
 
 N/A
 
@@ -63,6 +66,12 @@ N/A
 ## Modeling
 
 Convolutional Neural Network
+
+---
+
+## Results
+
+N/A
 
 ---
 
