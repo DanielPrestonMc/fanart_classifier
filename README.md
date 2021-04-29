@@ -73,11 +73,15 @@ Numpy, Pandas, Requests, Time, OS, bs4(BeautifulSoup), Pickle, TensorFlow.keras,
 ## Image Scraping & Transformation
 
 The training image data was scraped from https://myanimelist.net/.
+
 Beautiful Soup
+
 download images local via image url
 
 Tensorflow/Keras preprocessing image_dataset_from_directory coverting images to tensor array data.
+
 convert tensor data to numpy array data to input into neural network model
+
 Transforming image data from values between 0 and 255 to values between 0 and 1.
 
 ---
@@ -85,7 +89,9 @@ Transforming image data from values between 0 and 255 to values between 0 and 1.
 ## Modeling
 
 Convolutional Neural Network: best for image data
+
 Conv2D layers with MaxPooling2D layers
+
 Dense layers and Dropout layers
 
 ---
@@ -93,6 +99,7 @@ Dense layers and Dropout layers
 ## Results
 
 Metric: Accuracy
+
 Best on testing data: 66%
 
 ---
