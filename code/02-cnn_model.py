@@ -92,7 +92,7 @@ history = cnn_model.fit(X_train,
                       verbose=2)
 
 # saving model to file for use in flask application
-cnn_model.save('../model')
+cnn_model.save('../flask_app/model')
 
 # loading model back in to confirm work save file
 # cap_model = load_model('../cap_model')

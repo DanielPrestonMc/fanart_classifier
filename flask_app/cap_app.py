@@ -34,7 +34,7 @@ def results():
 
     data.save(path)
 
-    model = load_model('../model')
+    model = load_model('./model')
 
     # Reference: https://keras.io/api/preprocessing/image/
     test_img = image.load_img(path=(path),
