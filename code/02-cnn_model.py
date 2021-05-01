@@ -16,7 +16,7 @@ from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2
 
 
 # Using tensorflow.keras.preprocessing.image_dataset_from_directory to read in image data.  Images are classified by the directory folders they are in automatically.  Original image size is retained.  95 images, 8 classes.
-image_data = image_dataset_from_directory('../assets',
+image_data = image_dataset_from_directory('../data',
                                         labels='inferred',
                                         label_mode='categorical',
                                         image_size=(255, 350),
@@ -95,6 +95,6 @@ history = cnn_model.fit(X_train,
 cnn_model.save('../flask_app/model')
 
 # loading model back in to confirm work save file
-# cap_model = load_model('../cap_model')
+# cap_model = load_model('../flask_app/cap_model')
 
 # cap_model.summary()

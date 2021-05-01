@@ -31,14 +31,14 @@ def anime_scraper(url, alt_attr, folder):
     # Referenced from: https://stackoverflow.com/questions/16694907/download-large-file-in-python-with-requests
 
     # creates new folder to download images to if folder does not already exist.
-    if not os.path.isdir(f'../assets/{folder}'):
-        os.makedirs(f'../assets/{folder}')
+    if not os.path.isdir(f'../data/{folder}'):
+        os.makedirs(f'../data/{folder}')
 
     # loop through list of image urls
     for url in image_urls:
 
         # specify the folder and file name(the same file name at the very end of the url) to download images to
-        filename = os.path.join(f'../assets/{folder}', url.split('/')[-1])
+        filename = os.path.join(f'../data/{folder}', url.split('/')[-1])
 
         time.sleep(2)
 

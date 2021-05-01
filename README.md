@@ -32,23 +32,23 @@ The goal of this project is to develop an application that allows 'One Piece' fa
 
 The training image data was scraped from https://myanimelist.net/.
 
-[Luffy Image Data](assets/luffy/) - This folder contains image data for the character 'Luffy'.
+[Luffy Image Data](data/luffy/) - This folder contains image data for the character 'Luffy'.
 <br>
-[Zoro Image Data](assets/zoro/) - This folder contains image data for the character 'Zoro'.
+[Zoro Image Data](data/zoro/) - This folder contains image data for the character 'Zoro'.
 <br>
-[Nami Image Data](assets/nami/) - This folder contains image data for the character 'Nami'.
+[Nami Image Data](data/nami/) - This folder contains image data for the character 'Nami'.
 <br>
-[Sanji Image Data](assets/sanji/) - This folder contains image data for the character 'Sanji'.
+[Sanji Image Data](data/sanji/) - This folder contains image data for the character 'Sanji'.
 <br>
-[Chopper Image Data](assets/chopper/) - This folder contains image data for the character 'Chopper'.
+[Chopper Image Data](data/chopper/) - This folder contains image data for the character 'Chopper'.
 <br>
-[Robin Image Data](assets/robin/) - This folder contains image data for the character 'Robin'.
+[Robin Image Data](data/robin/) - This folder contains image data for the character 'Robin'.
 <br>
-[Franky Image Data](assets/franky/) - This folder contains image data for the character 'Franky'.
+[Franky Image Data](data/franky/) - This folder contains image data for the character 'Franky'.
 <br>
-[Brook Image Data](assets/brook/) - This folder contains image data for the character 'Brook'.
+[Brook Image Data](data/brook/) - This folder contains image data for the character 'Brook'.
 <br><br>
-[Usopp Image Data](assets/usopp/) - This folder contains image data for the character 'Usopp'.
+[Usopp Image Data](data/usopp/) - This folder contains image data for the character 'Usopp'.
 <br><br>
 
 ---
