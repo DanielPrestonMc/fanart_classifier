@@ -48,6 +48,8 @@ The training image data was scraped from https://myanimelist.net/.
 <br>
 [Brook Image Data](assets/brook/) - This folder contains image data for the character 'Brook'.
 <br><br>
+[Usopp Image Data](assets/usopp/) - This folder contains image data for the character 'Usopp'.
+<br><br>
 
 ---
 
@@ -55,9 +57,9 @@ The training image data was scraped from https://myanimelist.net/.
 
 [Python File for Scraper Function](code/scraping/scraper.py)
 <br>
-[Python File for Scraping Character Image Data](code/scraping/scraping_characters.py)
+[Python File for Scraping Character Image Data](code/scraping/01-scraping_characters.py)
 <br>
-[Python File for CNN Model](code/cnn_model.py)
+[Python File for CNN Model](code/02-cnn_model.py)
 <br>
 [Python File for Flask App Deployment](flask_app/cap_app.py)
 <br>
@@ -66,50 +68,38 @@ The training image data was scraped from https://myanimelist.net/.
 
 ## Python Libraries & Packages
 
-Numpy, Pandas, Requests, Time, OS, bs4(BeautifulSoup), Pickle, TensorFlow.keras, Sklearn
+Numpy, Pandas, Requests, Time, os, bs4(BeautifulSoup), TensorFlow, Sklearn
 
 ---
 
 ## Image Scraping & Transformation
 
-The training image data was scraped from https://myanimelist.net/.
-
-Beautiful Soup
-
-download images local via image url
-
-Tensorflow/Keras preprocessing image_dataset_from_directory coverting images to tensor array data.
-
-convert tensor data to numpy array data to input into neural network model
-
-Transforming image data from values between 0 and 255 to values between 0 and 1.
+The training image data was scraped from https://myanimelist.net/ using Beautiful Soup(bs4). A scraper function was constructed that could accept a character's specific html attributes so too much data is not scraped. From there, the images were downloaded locally using the request.get method on the image url. A tensorflow preprocessing method called image_dataset_from_directory converted the local images to tensor array data, which was then converted to numpy array data for use with the neural network model. But before the array data could be used, it was wise to transform the contents of each arrays from values between 0 and 255 to values between 0 and 1. Neural networks usually do a better job working with data in these ranges.
 
 ---
 
 ## Modeling
 
-Convolutional Neural Network: best for image data
-
-Conv2D layers with MaxPooling2D layers
-
-Dense layers and Dropout layers
+The decision was made to utilize a Convolutional Neural Network, which is usually best for image data.  First, Conv2D layers with MaxPooling2D layers were built out to add a variety of filters to each piece of image data that the model can train on.  This allows for better adaptation to more obscure pieces of test image data.  After adding a Flatten layer to make the data accessible for input into the dense neural network, dense layers and dropout layers were added to train the model.
 
 ---
 
 ## Results
 
-Metric: Accuracy
-
-Best on testing data: 66%
+The model was measured on the accuracy of predicting the correct category(or character) for each piece of image data.  The model had a best performance score of 66% on the testing data.
 
 ---
 
 ## Application
 
-Flask/Heroku App
+The web application was deployed using Flask and loaded in our trained model to accept new image data to predict on via a file input html button.  After a new file was submitted, it was ran through the model using the model.predict method.  The next screen of the web app will print out the character name prediction in text as well as posting the user submitted image side by side with an actual character image used to originally train the model.
 
 ---
 
 ## Conclusion
 
-risks/limitations/assumptions:
+This experiment can be limited by local or cloud storage capacity for image data as well as CPU processing power for deeper neural network computations on larger amounts of data.
+
+Risks for the experiment can include potential copyright infringement issues with character owners, depending on the intended deployment of the application.  Also, using user-created fanart without proper authorization could lead to potential roadblocks in testing, as well as locally saving user submitted images without properly communicating with users.  Another potential larger risk with using a model like this is training on image data of real people and using this application to potential track and spy on the whereabouts of actual, private citizens.
+
+We can assume that the model will never perform with 100% accuracy because the user submitted images may have varying degrees of character recognition based on the artistic abilities of the user or purposefully obscuring a character illustration through creative expression.  With more image data being trained on by the model, particularly the more obscure characterization images, then better the model may be at prediction more unique illustrations.
