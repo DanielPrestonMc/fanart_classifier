@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Results</title>
+</head>
+	<body>
+		<!-- Reference: https://stackoverflow.com/questions/28207761/where-does-flask-look-for-image-files -->
+		<center>
+			<img src="{{url_for('static', filename=filename)}}" width='255' height='350'/>
+			<img src="{{url_for('static', filename=char + '.jpg')}}" width='255' height='350'/>
+			<h2> The character you created is {{data}}!<h2>
+		</center>
+	</body>
+</html>

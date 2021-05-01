@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Straw Hats Fanart Classifier</title>
+	</head>
+	<body>
+		<center>
+			<h1>Straw Hats Fanart Classifier</h1>
+			<img src="{{url_for('static', filename='franky.jpg')}}" width='155' height='250'/>
+			<img src="{{url_for('static', filename='usopp.jpg')}}" width='155' height='250'/>
+			<img src="{{url_for('static', filename='nami.jpg')}}" width='155' height='250'/>
+			<img src="{{url_for('static', filename='zoro.jpg')}}" width='155' height='250'/>
+			<img src="{{url_for('static', filename='luffy.jpg')}}" width='155' height='250'/>
+			<img src="{{url_for('static', filename='sanji.jpg')}}" width='155' height='250'/>
+			<img src="{{url_for('static', filename='robin.jpg')}}" width='155' height='250'/>
+			<img src="{{url_for('static', filename='chopper.jpg')}}" width='155' height='250'/>
+			<img src="{{url_for('static', filename='brook.jpg')}}" width='155' height='250'/>
+		<!-- Reference: https://www.w3schools.com/html/html_form_input_types.asp -->
+		<!-- Reference: https://stackoverflow.com/questions/1593225/how-to-select-multiple-files-with-input-type-file -->
+			<form action="/results" method='POST' enctype="multipart/form-data">
+				<label for="results">Submit Your Fanart:</label><br><br>
+				<input type="file" name="results"><br><br>
+				<button type="submit">See Results!</button>
+			</form>
+		</center>
+	</body>
+	</html>
