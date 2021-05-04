@@ -1,5 +1,3 @@
-# to test flask application, run this python file in terminal from this directory ('python cap_app.py').  After loading in terminal, copy http url into web browser.
-
 # imports
 import numpy as np
 import pickle
