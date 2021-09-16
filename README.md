@@ -9,7 +9,7 @@ https://www.github.com/DanielPrestonMc
 
 - [Background/Problem Statement](#Background-&-Problem-Statement)
 - [The Data](#The-Data)
-- [Jupyter Lab Notebook Files](#Jupyter-Lab-Notebook-Files)
+- [Python Files](#Jupyter-Lab-Notebook-Files)
 - [Python Libraries & Packages](#Python-Libraries-&-Packages)
 - [Image Scraping & Transformation](#Image-Scraping-&-Transformation)
 - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
@@ -55,7 +55,7 @@ The training image data was scraped from www.myanimelist.net and www.animecharac
 
 ---
 
-## Jupyter Lab Notebook Files
+## Python Files
 
 [Scraper Function](code/scraper.py)
 <br>
